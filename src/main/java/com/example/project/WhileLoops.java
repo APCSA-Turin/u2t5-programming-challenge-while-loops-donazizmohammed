@@ -166,8 +166,15 @@ public class WhileLoops {
     * // battery would never drain
     */
    public static int minutesUntilDead(int startPercent, int perMinuteUse) {
-       //YOUR CODE HERE
-       return -1;
+        int mins = 0;
+        if (startPercent <= 0 || perMinuteUse <= 0){
+            return 0;
+        }
+        while (startPercent>0){
+            startPercent-=perMinuteUse;
+            mins++;
+        }
+        return mins;
    }
 }
 
