@@ -30,8 +30,10 @@ public class WhileLoops {
     * countEvensUpTo(10) -> 5 // {2, 4, 6, 8, 10}
     */
    public static int countEvensUpTo(int n) {
-       // YOUR CODE HERE
-       return -1;
+        while(n>1){
+        return n/2;
+       }
+       return 0;
    }
 
 
@@ -47,8 +49,13 @@ public class WhileLoops {
     * digitSum(199) -> 19 // 1 + 9 + 9
     */
    public static int digitSum(int n) {
-       // YOUR CODE HERE
-       return -1;
+    int sum = 0;
+    int n2 = n;  
+    while (n2>0){
+        sum += n2 % 10;
+        n2 /= 10;
+     }
+      return sum;
    }
 
 
@@ -72,10 +79,18 @@ public class WhileLoops {
     * // can't subtract without going negative
     */
    public static int countDownBy(int start, int step) {
-       // YOUR CODE HERE
-       return -1;
+    int bleh = start;
+    if(step <= 0){
+        return start;
+    }
+    if(step > start){
+        return start;
+    }
+    while(bleh - step >= 0){
+        bleh -= step;
+    }
+    return bleh;
    }
-
 
    /**
     * You have some money saved and you deposit the same amount every week.
@@ -105,8 +120,19 @@ public class WhileLoops {
     * // 10 -> 20 -> 30 -> 40
     */
    public static int weeksToReachGoal(int startBalance, int weeklyDeposit, int goalBalance) {
-       // CODE HERE
-       return -1;
+       int weeks = 0;
+       int currentBalance = startBalance;
+       if(currentBalance >= goalBalance){
+        return 0;
+       }
+
+       while(currentBalance < goalBalance){
+            currentBalance += weeklyDeposit;
+            weeks++;
+       }
+       return weeks;
+
+       
    }
 
 
